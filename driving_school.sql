@@ -74,13 +74,6 @@ CREATE TABLE registrations (
     foreign key(student_id) references student (id)
 );
 
-DROP TABLE IF EXISTS license_car;
-CREATE TABLE license_car (
-    license_type varchar(10),
-    car_type varchar(10),
-    primary key(license_type)
-);
-
 DROP TABLE IF EXISTS theory_test_schedule;
 CREATE TABLE theory_test_schedule(
 	day date,
