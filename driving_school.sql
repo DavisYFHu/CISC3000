@@ -13,9 +13,8 @@ CREATE TABLE coaches (
 
 DROP TABLE IF EXISTS car_types;
 CREATE TABLE car_types (
-    id INT AUTO_INCREMENT,
     type_name VARCHAR(10),
-    PRIMARY KEY(id)
+    PRIMARY KEY(type_name)
 );
 
 INSERT INTO car_types (type_name) VALUES 
@@ -47,7 +46,7 @@ CREATE TABLE vehichles (
     model varchar(24),
     status varchar(8), -- normal, broken
     PRIMARY KEY(license_plate),
-    CONSTRAINT check_car_type CHECK (car_type IN (SELECT type_name from car_types))
+    FOREIGN KEY(car_type) REFERENCES car_types(type_name)
 );
 
 DROP TABLE IF EXISTS  student;
