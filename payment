@@ -1,0 +1,10 @@
+CREATE TABLE payments(
+	payment_id INT auto_increment,
+    student_id INT NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    payment_method ENUM('cash', 'credit card', 'bank transfer', 'other') NOT NULL,
+    category ENUM('registration fee','theory tuition fee','driving tuition fee','rent car fee'),
+    description VARCHAR(255),
+	PRIMARY KEY (payment_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
