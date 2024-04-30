@@ -32,10 +32,10 @@ INSERT INTO car_types (type_name) VALUES
 DROP TABLE IF EXISTS coach_car_types;
 CREATE TABLE coach_car_types (
     coach_id INT,
-    car_type_id INT,
-    PRIMARY KEY(coach_id, car_type_id),
+    car_type varchar(10),
+    PRIMARY KEY(coach_id, car_type),
     FOREIGN KEY(coach_id) REFERENCES coaches(id),
-    FOREIGN KEY(car_type_id) REFERENCES car_types(id)
+    FOREIGN KEY(car_type) REFERENCES car_types(type_name)
 );
 
 DROP TABLE IF EXISTS vehichles;
